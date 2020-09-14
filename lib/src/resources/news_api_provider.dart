@@ -2,10 +2,11 @@ import 'package:http/http.dart' show Client;
 import 'dart:convert';
 import 'dart:async';
 import 'package:news/src/models/item_model.dart';
+import 'repository.dart';
 
 final _root = 'https://hacker-news.firebaseio.com/v0';
 
-class NewsApiProvider {
+class NewsApiProvider implements Source {
   Client client =
       Client(); // this is why we create "client" as an instance variable, to be able to test it, rather than using .get directly from http package
 
