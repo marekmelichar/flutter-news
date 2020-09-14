@@ -9,6 +9,10 @@ import 'repository.dart';
 class NewsDbProvider implements Source {
   Database db;
 
+  NewsDbProvider() {
+    init();
+  }
+
   // TODO
   Future<List<int>> fetchTopIds() {
     return null;
@@ -54,3 +58,5 @@ class NewsDbProvider implements Source {
     return db.insert("Items", item.toMapForDb());
   }
 }
+
+final newsDbProvider = NewsDbProvider();
